@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --mainColor: #1b5230;
+    --secondaryColor: #2d8a56;
+    --bgColor: #559b75;
+
+/* Linear Gradient takes 3 arguements. (Degree, Color 1, Color 2) */
+    --bgLinearGradient: linear-gradient(0deg, green, rgb(79, 209, 125));
+    --bgRadialGradient: radial-gradient(0deg, rgb(44, 193, 44), rgb(2, 27, 23));
+
+    --transition: 300ms ease-in-out;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background: var(--bgLinearGradient);
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,h2 {
+    margin-bottom: 15px;
+    }
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.navbar {
+    background: var(--secondaryColor);
+    color: white;
+    height: 60px;
+}
+
+.navbar .logo {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: lightblue;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.header{
+    background: var(--mainColor);
+    color: white;
+    min-height: 100%;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2;
+    
+}
+
+.header img {
+    max-width: 400px;
+    animation: 0.0005s clipPathDemoAnim infinite;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boxes .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    flex: 1;
+    background: var(--mainColor);
+    color: white;
+    border-radius: 10px;
+    margin: 20px 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px;
+}
+
+.box:hover {
+    filter: brightness(1.5);
+    transition: 500ms ease-in-out;
+    transform: scale(1.05);
+}
+
+.box:active {
+    filter: brightness(0.5);
+    transition: var(--transition);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.box i {
+    margin-right: 10px;
+}
+
+@media(max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .boxes .container {
+        display: block;
+        text-align: center;
+    }
+}
+
+.clipPathDemo {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: url(https://c.tenor.com/RN_Qtdf11N0AAAAd/space.gif);
+    width: 700px;
+    height: 500px;
+    border-radius: 10px;
+    color: attr(data-text-color);
+    transition: var(--transition);
+    /* Animation : time transition name num of repeats reverse */
+    animation: 0.0005s clipPathDemoAnim infinite;
+}
+
+
+
+@keyframes clipPathDemoAnim {
+    0% {
+        filter: hue-rotate(0);
+        rotate: 0deg;
+    }
+
+    100% {
+        filter: hue-rotate(500);
+        rotate: 360deg;
+    }
+}
